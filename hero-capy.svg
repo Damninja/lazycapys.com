@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="none">
+
+  <!-- Ground shadow -->
+  <ellipse cx="240" cy="464" rx="148" ry="16" fill="#7C4A2D" opacity="0.14"/>
+
+  <!-- === LEAVES LEFT === -->
+  <ellipse cx="62" cy="310" rx="58" ry="20" fill="#7A9E7E" transform="rotate(-38 62 310)"/>
+  <line x1="62" y1="310" x2="22" y2="284" stroke="#5A7E5E" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="44" cy="356" rx="50" ry="17" fill="#6B8E70" transform="rotate(-58 44 356)"/>
+  <line x1="44" y1="356" x2="12" y2="326" stroke="#4A6E50" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="82" cy="272" rx="42" ry="15" fill="#8AAE8A" transform="rotate(-22 82 272)"/>
+  <line x1="82" y1="272" x2="48" y2="256" stroke="#6A8E6A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- === LEAVES RIGHT === -->
+  <ellipse cx="418" cy="310" rx="58" ry="20" fill="#7A9E7E" transform="rotate(38 418 310)"/>
+  <line x1="418" y1="310" x2="458" y2="284" stroke="#5A7E5E" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="436" cy="356" rx="50" ry="17" fill="#6B8E70" transform="rotate(58 436 356)"/>
+  <line x1="436" y1="356" x2="468" y2="326" stroke="#4A6E50" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="398" cy="272" rx="42" ry="15" fill="#8AAE8A" transform="rotate(22 398 272)"/>
+  <line x1="398" y1="272" x2="432" y2="256" stroke="#6A8E6A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- === TUB SHADOW === -->
+  <rect x="106" y="320" width="280" height="148" rx="26" fill="#5A3820" opacity="0.22"/>
+
+  <!-- === TUB BODY === -->
+  <rect x="100" y="308" width="280" height="148" rx="26" fill="#8B5E3C"/>
+
+  <!-- === TUB RIM === -->
+  <rect x="88" y="290" width="304" height="32" rx="16" fill="#A87040"/>
+  <rect x="92" y="292" width="296" height="14" rx="9" fill="#C08852" opacity="0.5"/>
+
+  <!-- === WATER === -->
+  <rect x="108" y="315" width="264" height="141" rx="20" fill="#94C0D8"/>
+  <!-- Water surface highlight -->
+  <ellipse cx="240" cy="320" rx="124" ry="13" fill="#B4D4E8"/>
+  <!-- Ripples -->
+  <ellipse cx="196" cy="335" rx="36" ry="7" fill="none" stroke="#7AAEC8" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="268" cy="342" rx="26" ry="5" fill="none" stroke="#7AAEC8" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- === TUB WOOD GRAIN LINES === -->
+  <path d="M 102 344 Q 240 340 378 344" stroke="#6A4428" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 102 372 Q 240 368 378 372" stroke="#6A4428" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 102 400 Q 240 396 378 400" stroke="#6A4428" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 102 428 Q 240 424 378 428" stroke="#6A4428" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Tub metal bands -->
+  <rect x="88" y="330" width="304" height="9" rx="4.5" fill="#6A4428" opacity="0.35"/>
+  <rect x="88" y="406" width="304" height="9" rx="4.5" fill="#6A4428" opacity="0.35"/>
+
+  <!-- === ORANGE SLICE (floating in water) === -->
+  <circle cx="334" cy="326" r="27" fill="#E07A0A"/>
+  <circle cx="334" cy="326" r="21" fill="#FFC040"/>
+  <circle cx="334" cy="326" r="14" fill="#FFE08A"/>
+  <line x1="334" y1="299" x2="334" y2="353" stroke="#D06008" stroke-width="1.5" opacity="0.75"/>
+  <line x1="307" y1="326" x2="361" y2="326" stroke="#D06008" stroke-width="1.5" opacity="0.75"/>
+  <line x1="315" y1="307" x2="353" y2="345" stroke="#D06008" stroke-width="1.5" opacity="0.75"/>
+  <line x1="315" y1="345" x2="353" y2="307" stroke="#D06008" stroke-width="1.5" opacity="0.75"/>
+
+  <!-- === STEAM WISPS === -->
+  <path d="M 158 282 Q 150 260 158 238 Q 166 216 158 194" stroke="#C4DCE8" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 192 274 Q 184 250 192 226 Q 200 202 192 178" stroke="#C4DCE8" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <path d="M 226 280 Q 218 256 226 232 Q 234 208 226 184" stroke="#C4DCE8" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- === CAPYBARA BODY (in tub) === -->
+  <ellipse cx="232" cy="316" rx="104" ry="60" fill="#7C4A2D"/>
+
+  <!-- === CAPYBARA HEAD === -->
+  <ellipse cx="230" cy="210" rx="86" ry="72" fill="#7C4A2D"/>
+
+  <!-- Head-body connector -->
+  <rect x="172" y="248" width="120" height="76" fill="#7C4A2D"/>
+
+  <!-- Fur crown highlight -->
+  <ellipse cx="230" cy="148" rx="60" ry="24" fill="#8B5535" opacity="0.38"/>
+
+  <!-- === LEFT EAR === -->
+  <ellipse cx="160" cy="152" rx="26" ry="22" fill="#6A3820"/>
+  <ellipse cx="160" cy="152" rx="16" ry="13" fill="#C4623A"/>
+
+  <!-- === RIGHT EAR === -->
+  <ellipse cx="300" cy="152" rx="26" ry="22" fill="#6A3820"/>
+  <ellipse cx="300" cy="152" rx="16" ry="13" fill="#C4623A"/>
+
+  <!-- === LEFT EYE === -->
+  <circle cx="196" cy="200" r="22" fill="white"/>
+  <circle cx="198" cy="202" r="15" fill="#1A0804"/>
+  <circle cx="203" cy="195" r="6" fill="white"/>
+  <circle cx="205" cy="204" r="3" fill="white" opacity="0.5"/>
+
+  <!-- === RIGHT EYE === -->
+  <circle cx="266" cy="200" r="22" fill="white"/>
+  <circle cx="268" cy="202" r="15" fill="#1A0804"/>
+  <circle cx="273" cy="195" r="6" fill="white"/>
+  <circle cx="275" cy="204" r="3" fill="white" opacity="0.5"/>
+
+  <!-- Drowsy eyelids (lazy half-closed look) -->
+  <!-- Left eyelid: arc over top of left eye -->
+  <path d="M 174,200 A 22,22 0 0,0 218,200 Q 196,185 174,200 Z" fill="#7C4A2D"/>
+  <!-- Right eyelid -->
+  <path d="M 244,200 A 22,22 0 0,0 288,200 Q 266,185 244,200 Z" fill="#7C4A2D"/>
+
+  <!-- === CHEEK BLUSH === -->
+  <ellipse cx="162" cy="224" rx="22" ry="12" fill="#D4784A" opacity="0.2"/>
+  <ellipse cx="298" cy="224" rx="22" ry="12" fill="#D4784A" opacity="0.2"/>
+
+  <!-- === SNOUT === -->
+  <ellipse cx="230" cy="248" rx="60" ry="38" fill="#9B6040"/>
+
+  <!-- Nostrils -->
+  <ellipse cx="212" cy="240" rx="11" ry="9" fill="#3A1808"/>
+  <ellipse cx="248" cy="240" rx="11" ry="9" fill="#3A1808"/>
+  <!-- Nostril highlights -->
+  <circle cx="209" cy="237" r="3.5" fill="#5A2C14" opacity="0.4"/>
+  <circle cx="245" cy="237" r="3.5" fill="#5A2C14" opacity="0.4"/>
+
+  <!-- Smile -->
+  <path d="M 210 262 Q 230 276 250 262" stroke="#3A1808" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Whisker dots left -->
+  <circle cx="172" cy="248" r="3.5" fill="#3A1808" opacity="0.5"/>
+  <circle cx="172" cy="259" r="3.5" fill="#3A1808" opacity="0.5"/>
+  <!-- Whisker dots right -->
+  <circle cx="288" cy="248" r="3.5" fill="#3A1808" opacity="0.5"/>
+  <circle cx="288" cy="259" r="3.5" fill="#3A1808" opacity="0.5"/>
+
+  <!-- Small flower on head (cute detail) -->
+  <circle cx="230" cy="128" r="8" fill="#FFC040"/>
+  <circle cx="222" cy="120" r="6" fill="#FFC040"/>
+  <circle cx="238" cy="120" r="6" fill="#FFC040"/>
+  <circle cx="218" cy="128" r="6" fill="#FFC040"/>
+  <circle cx="242" cy="128" r="6" fill="#FFC040"/>
+  <circle cx="230" cy="128" r="5" fill="#C4623A"/>
+
+</svg>

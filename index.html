@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lazy Capys — Cozy Capybara Plushies & Merch</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg"/>
   <meta name="description" content="Shop adorable capybara plushies, hoodies, mugs and more. Lazy Capys — because you deserve to be as chill as a capybara." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,7 +56,7 @@
       display: flex; align-items: center; gap: 8px;
       text-decoration: none; flex-shrink: 0;
     }
-    .logo span { font-size: 1.6rem; }
+    .logo img { width: 36px; height: 36px; border-radius: 50%; display: block; }
     .nav { display: flex; align-items: center; gap: 8px; flex: 1; }
     .nav a {
       padding: 8px 16px; border-radius: 50px;
@@ -183,7 +184,7 @@
     .hero-main-card {
       background: #fff;
       border-radius: 28px;
-      padding: 40px;
+      padding: 20px;
       box-shadow: 0 20px 60px rgba(124,74,45,0.15);
       text-align: center;
       position: relative; z-index: 2;
@@ -191,11 +192,6 @@
       transition: transform 0.3s;
     }
     .hero-main-card:hover { transform: rotate(0deg) scale(1.02); }
-    .hero-main-card .big-emoji { font-size: 7rem; line-height: 1; margin-bottom: 12px; }
-    .hero-main-card p {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; color: var(--muted); font-style: italic;
-    }
     .float-card {
       position: absolute;
       background: #fff;
@@ -453,7 +449,7 @@
 <!-- ── Header ─────────────────────────────────────────────────────── -->
 <header class="header">
   <div class="header-inner">
-    <a href="index.html" class="logo"><span>🦫</span> Lazy Capys</a>
+    <a href="index.html" class="logo"><img src="logo.svg" alt="Lazy Capys logo"> Lazy Capys</a>
     <nav class="nav" aria-label="Main navigation">
       <a href="index.html" class="active">Home</a>
       <a href="shop.html">Shop</a>
@@ -488,8 +484,7 @@
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="hero-main-card">
-        <div class="big-emoji">🦫</div>
-        <p>"Just vibing, thanks."</p>
+        <img src="hero-capy.svg" alt="Capybara relaxing in a hot spring" style="width:100%;max-width:300px;display:block;margin:0 auto;" />
       </div>
       <div class="float-card float-1"><span class="fc-emoji">⭐</span> 4.9 / 5 rating</div>
       <div class="float-card float-2"><span class="fc-emoji">📦</span> Free over $50</div>
@@ -589,7 +584,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><span>🦫</span> Lazy Capys</a>
+        <a href="index.html" class="logo"><img src="logo.svg" alt="Lazy Capys logo"> Lazy Capys</a>
         <p>Cozy capybara plushies and merch for people who appreciate the finer things in life — like sitting in a hot spring and doing absolutely nothing.</p>
       </div>
       <div class="footer-col">
