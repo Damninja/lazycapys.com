@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lazy Capys — Cozy Capybara Plushies & Merch</title>
+  <meta name="description" content="Shop adorable capybara plushies, hoodies, mugs and more. Lazy Capys — because you deserve to be as chill as a capybara." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --terracotta: #C4623A;
+      --warm-brown: #7C4A2D;
+      --cream: #FFF8F0;
+      --off-white: #F5E6D3;
+      --sage: #7A9E7E;
+      --muted: #9B7B6B;
+      --border: #E8D0B8;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 4px 20px rgba(124,74,45,0.1);
+      --shadow-hover: 0 12px 40px rgba(124,74,45,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: #3a2215;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ── Header ──────────────────────────────────────────────────── */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,248,240,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center;
+      height: 70px; gap: 32px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 800;
+      color: var(--warm-brown);
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .logo span { font-size: 1.6rem; }
+    .nav { display: flex; align-items: center; gap: 8px; flex: 1; }
+    .nav a {
+      padding: 8px 16px; border-radius: 50px;
+      font-weight: 700; font-size: 0.95rem;
+      color: var(--warm-brown);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav a:hover, .nav a.active { background: var(--off-white); color: var(--terracotta); }
+    .header-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+    .cart-icon-btn {
+      position: relative;
+      background: none; border: none;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+      color: var(--warm-brown);
+    }
+    .cart-icon-btn:hover { background: var(--off-white); }
+    .cart-badge {
+      position: absolute; top: 2px; right: 2px;
+      min-width: 18px; height: 18px;
+      background: var(--terracotta); color: #fff;
+      font-size: 0.65rem; font-weight: 900;
+      border-radius: 99px;
+      display: none; align-items: center; justify-content: center;
+      padding: 0 4px;
+      border: 2px solid var(--cream);
+    }
+    .hamburger {
+      display: none;
+      background: none; border: none;
+      flex-direction: column; gap: 5px;
+      padding: 8px; border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .hamburger:hover { background: var(--off-white); }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--warm-brown); border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .mobile-nav {
+      display: none;
+      position: fixed; inset: 0; top: 70px;
+      background: var(--cream);
+      padding: 24px;
+      z-index: 99;
+      flex-direction: column; gap: 8px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      padding: 14px 20px; border-radius: var(--radius-sm);
+      font-weight: 700; font-size: 1.1rem;
+      color: var(--warm-brown);
+      border: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .mobile-nav a:hover { background: var(--off-white); }
+
+    /* ── Hero ────────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #fdf0e4 0%, #f5dfc8 40%, #e8ceb0 100%);
+      padding: 80px 24px 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(196,98,58,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(122,158,126,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 48px;
+      position: relative; z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(196,98,58,0.12); color: var(--terracotta);
+      padding: 6px 14px; border-radius: 50px;
+      font-weight: 800; font-size: 0.82rem;
+      letter-spacing: 0.5px; margin-bottom: 20px;
+      border: 1px solid rgba(196,98,58,0.2);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800; line-height: 1.15;
+      color: var(--warm-brown);
+      margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--terracotta); font-style: italic; }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--muted);
+      max-width: 480px; margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--terracotta), var(--warm-brown));
+      color: #fff; border: none;
+      padding: 14px 28px; border-radius: 50px;
+      font-weight: 800; font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(196,98,58,0.3);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,98,58,0.4); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.7);
+      color: var(--warm-brown); border: 2px solid var(--border);
+      padding: 13px 26px; border-radius: 50px;
+      font-weight: 800; font-size: 1rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover { background: #fff; border-color: var(--terracotta); color: var(--terracotta); }
+    .hero-visual {
+      position: relative; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .hero-main-card {
+      background: #fff;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(124,74,45,0.15);
+      text-align: center;
+      position: relative; z-index: 2;
+      transform: rotate(-2deg);
+      transition: transform 0.3s;
+    }
+    .hero-main-card:hover { transform: rotate(0deg) scale(1.02); }
+    .hero-main-card .big-emoji { font-size: 7rem; line-height: 1; margin-bottom: 12px; }
+    .hero-main-card p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--muted); font-style: italic;
+    }
+    .float-card {
+      position: absolute;
+      background: #fff;
+      border-radius: 16px;
+      padding: 12px 16px;
+      box-shadow: 0 8px 24px rgba(124,74,45,0.12);
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--warm-brown);
+      display: flex; align-items: center; gap: 8px;
+      white-space: nowrap;
+    }
+    .float-card .fc-emoji { font-size: 1.3rem; }
+    .float-1 { top: 0; right: -20px; animation: float1 4s ease-in-out infinite; }
+    .float-2 { bottom: 20px; left: -30px; animation: float2 5s ease-in-out infinite; }
+    .float-3 { top: 50%; right: -40px; transform: translateY(-50%); animation: float3 4.5s ease-in-out infinite; }
+    @keyframes float1 { 0%,100%{transform:translateY(0) rotate(2deg)} 50%{transform:translateY(-10px) rotate(2deg)} }
+    @keyframes float2 { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(-2deg)} }
+    @keyframes float3 { 0%,100%{transform:translateY(-50%) rotate(1deg)} 50%{transform:translateY(calc(-50% - 8px)) rotate(1deg)} }
+
+    /* ── Shipping Banner ─────────────────────────────────────────── */
+    .shipping-banner {
+      background: var(--warm-brown);
+      color: rgba(255,248,240,0.9);
+      padding: 12px 24px;
+      overflow: hidden;
+    }
+    .shipping-banner-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 32px; flex-wrap: wrap;
+      max-width: 1200px; margin: 0 auto;
+      font-size: 0.875rem; font-weight: 700;
+    }
+    .banner-item { display: flex; align-items: center; gap: 8px; }
+    .banner-item span:first-child { font-size: 1rem; }
+    .banner-divider { opacity: 0.3; }
+
+    /* ── Section common ──────────────────────────────────────────── */
+    section { padding: 80px 24px; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-tag {
+      display: inline-block;
+      background: var(--off-white); color: var(--terracotta);
+      padding: 4px 14px; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--warm-brown);
+      margin-bottom: 12px;
+    }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; margin: 0 auto; }
+
+    /* ── Product Cards ───────────────────────────────────────────── */
+    .products-section { background: var(--cream); }
+    .products-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .card-img {
+      height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; position: relative;
+    }
+    .card-badge {
+      position: absolute; top: 12px; left: 12px;
+      padding: 4px 10px; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 800;
+      color: #fff; letter-spacing: 0.3px;
+    }
+    .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--warm-brown); margin-bottom: 6px;
+    }
+    .card-desc { font-size: 0.875rem; color: var(--muted); flex: 1; margin-bottom: 16px; line-height: 1.5; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .card-price { font-size: 1.2rem; font-weight: 900; color: var(--terracotta); }
+    .btn-add {
+      background: var(--off-white); border: 2px solid var(--border);
+      color: var(--warm-brown); padding: 9px 18px;
+      border-radius: 50px; font-weight: 800; font-size: 0.875rem;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .btn-add:hover { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
+    .btn-add.added { background: var(--sage); border-color: var(--sage); color: #fff; }
+
+    /* ── Brand Story ─────────────────────────────────────────────── */
+    .story-section { background: var(--off-white); }
+    .story-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .story-emoji-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .story-emoji-tile {
+      background: #fff;
+      border-radius: var(--radius);
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+    .story-emoji-tile:hover { transform: scale(1.05) rotate(3deg); }
+    .story-emoji-tile:nth-child(2) { transform: translateY(12px); }
+    .story-emoji-tile:nth-child(5) { transform: translateY(-12px); }
+    .story-content .section-title { text-align: left; }
+    .story-content p { color: var(--muted); margin-bottom: 16px; line-height: 1.8; }
+    .story-content p:last-of-type { margin-bottom: 28px; }
+    .story-stats {
+      display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 800; color: var(--terracotta);
+      display: block;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--muted); font-weight: 700; }
+
+    /* ── Category Tiles ──────────────────────────────────────────── */
+    .categories-section { background: var(--cream); }
+    .categories-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .category-tile {
+      border-radius: 20px; overflow: hidden;
+      position: relative; aspect-ratio: 4/3;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 32px 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+    }
+    .category-tile:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .category-tile::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.08);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .category-tile:hover::after { opacity: 1; }
+    .ct-emoji { font-size: 3.5rem; margin-bottom: 14px; position: relative; z-index: 1; }
+    .ct-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700; color: #fff;
+      margin-bottom: 6px; position: relative; z-index: 1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .ct-count { font-size: 0.85rem; color: rgba(255,255,255,0.85); font-weight: 700; position: relative; z-index: 1; }
+    .ct-arrow {
+      position: absolute; bottom: 16px; right: 20px;
+      font-size: 1.2rem; opacity: 0.7; z-index: 1;
+      transition: transform 0.2s;
+    }
+    .category-tile:hover .ct-arrow { transform: translateX(4px); }
+    .ct-plushies { background: linear-gradient(135deg, #d4897a, #c4623a); }
+    .ct-apparel { background: linear-gradient(135deg, #8fb890, #5a7e5e); }
+    .ct-accessories { background: linear-gradient(135deg, #c4a85a, #a07c30); }
+
+    /* ── Footer ──────────────────────────────────────────────────── */
+    footer {
+      background: var(--warm-brown);
+      color: rgba(255,248,240,0.85);
+      padding: 60px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand .logo { color: var(--cream); margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; opacity: 0.8; max-width: 280px; }
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--cream); margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 0.9rem; opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .footer-col ul li a:hover { opacity: 1; color: var(--off-white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,248,240,0.15);
+      padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.82rem; opacity: 0.6; }
+    .footer-badges { display: flex; gap: 8px; align-items: center; }
+    .footer-badge {
+      background: rgba(255,248,240,0.1);
+      padding: 4px 10px; border-radius: 6px;
+      font-size: 0.75rem; font-weight: 700;
+      color: rgba(255,248,240,0.7);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .story-inner { grid-template-columns: 1fr; }
+      .story-emoji-grid { grid-template-columns: repeat(4, 1fr); }
+      .categories-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 56px 16px; }
+      .hero { padding: 56px 16px 72px; }
+      .header { padding: 0 16px; }
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .categories-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .shipping-banner-inner { flex-direction: column; gap: 10px; }
+      .banner-divider { display: none; }
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────── -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span>🦫</span> Lazy Capys</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-icon-btn" aria-label="Open cart">
+        🛒
+        <span class="cart-badge" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <a href="index.html">🏠 Home</a>
+  <a href="shop.html">🛍 Shop</a>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────────────── -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">🌿 New arrivals just dropped</div>
+      <h1>Chill Out with<br /><em>Lazy Capys.</em></h1>
+      <p class="hero-sub">Adorable capybara plushies, cozy merch, and good vibes only. Because the world could use a little more capybara energy.</p>
+      <div class="hero-ctas">
+        <a href="shop.html" class="btn-primary">Shop Now →</a>
+        <a href="shop.html?category=plushies" class="btn-secondary">🦫 See Plushies</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-main-card">
+        <div class="big-emoji">🦫</div>
+        <p>"Just vibing, thanks."</p>
+      </div>
+      <div class="float-card float-1"><span class="fc-emoji">⭐</span> 4.9 / 5 rating</div>
+      <div class="float-card float-2"><span class="fc-emoji">📦</span> Free over $50</div>
+      <div class="float-card float-3"><span class="fc-emoji">🌿</span> Eco packaging</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Shipping Banner ─────────────────────────────────────────────── -->
+<div class="shipping-banner" role="banner" aria-label="Shipping information">
+  <div class="shipping-banner-inner">
+    <div class="banner-item"><span>🚚</span><span>Free shipping over $50</span></div>
+    <span class="banner-divider">•</span>
+    <div class="banner-item"><span>🌿</span><span>Eco-friendly packaging</span></div>
+    <span class="banner-divider">•</span>
+    <div class="banner-item"><span>🖨️</span><span>Printed via Printful</span></div>
+    <span class="banner-divider">•</span>
+    <div class="banner-item"><span>💝</span><span>Every order ships with a capy sticker!</span></div>
+  </div>
+</div>
+
+<!-- ── Featured Products ───────────────────────────────────────────── -->
+<section class="products-section">
+  <div class="section-header">
+    <div class="section-tag">🌟 Fan Favorites</div>
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-sub">Our most-loved capybara goodies — hand-picked by capybaras (probably).</p>
+  </div>
+  <div class="products-grid" id="featured-grid">
+    <!-- Populated by JS -->
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="shop.html" class="btn-primary" style="display:inline-flex;">View All Products →</a>
+  </div>
+</section>
+
+<!-- ── Brand Story ─────────────────────────────────────────────────── -->
+<section class="story-section">
+  <div class="story-inner">
+    <div class="story-emoji-grid" aria-hidden="true">
+      <div class="story-emoji-tile">🦫</div>
+      <div class="story-emoji-tile">🛁</div>
+      <div class="story-emoji-tile">🌿</div>
+      <div class="story-emoji-tile">😌</div>
+      <div class="story-emoji-tile">☕</div>
+      <div class="story-emoji-tile">🍊</div>
+      <div class="story-emoji-tile">💛</div>
+      <div class="story-emoji-tile">🌸</div>
+      <div class="story-emoji-tile">✨</div>
+    </div>
+    <div class="story-content">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title">Why a capybara?</h2>
+      <p>Capybaras are nature's most unbothered creatures. They share their hot springs with everyone, get along with any animal, and radiate a calm that the internet has rightfully become obsessed with.</p>
+      <p>Lazy Capys started as a love letter to that energy. We believe everyone deserves a little capybara in their life — whether it's a plushie on your desk, a cozy hoodie, or a mug that reminds you to slow down and just vibe.</p>
+      <p>Every product is designed with care, printed on demand through Printful, and shipped in eco-friendly packaging. We're a small, capy-loving operation, and we're so glad you're here.</p>
+      <div class="story-stats">
+        <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Products</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Capy-approved</span></div>
+        <div class="stat"><span class="stat-num">♾️</span><span class="stat-label">Good vibes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Categories ──────────────────────────────────────────────────── -->
+<section class="categories-section">
+  <div class="section-header">
+    <div class="section-tag">Browse by Type</div>
+    <h2 class="section-title">Shop by Category</h2>
+    <p class="section-sub">Find exactly the kind of capy energy you're looking for.</p>
+  </div>
+  <div class="categories-grid">
+    <a href="shop.html?category=plushies" class="category-tile ct-plushies" aria-label="Shop Plushies">
+      <div class="ct-emoji">🦫</div>
+      <div class="ct-name">Plushies</div>
+      <div class="ct-count">3 products</div>
+      <span class="ct-arrow">→</span>
+    </a>
+    <a href="shop.html?category=apparel" class="category-tile ct-apparel" aria-label="Shop Apparel">
+      <div class="ct-emoji">🧥</div>
+      <div class="ct-name">Apparel</div>
+      <div class="ct-count">1 product</div>
+      <span class="ct-arrow">→</span>
+    </a>
+    <a href="shop.html?category=accessories" class="category-tile ct-accessories" aria-label="Shop Accessories">
+      <div class="ct-emoji">👜</div>
+      <div class="ct-name">Accessories</div>
+      <div class="ct-count">3 products</div>
+      <span class="ct-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span>🦫</span> Lazy Capys</a>
+        <p>Cozy capybara plushies and merch for people who appreciate the finer things in life — like sitting in a hot spring and doing absolutely nothing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html?category=plushies">Plushies</a></li>
+          <li><a href="shop.html?category=apparel">Apparel</a></li>
+          <li><a href="shop.html?category=accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lazy Capys. Made with 🧡 for capybara lovers everywhere.</p>
+      <div class="footer-badges">
+        <span class="footer-badge">🌿 Eco Packaging</span>
+        <span class="footer-badge">🔒 Secure</span>
+        <span class="footer-badge">🖨️ Printful</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  // ── Featured Products ─────────────────────────────────────────────
+  const FEATURED_IDS = ['classic-capy-plushie', 'hot-spring-capy', 'lazy-capy-hoodie', 'lazy-capy-tote'];
+
+  function renderFeatured() {
+    const grid = document.getElementById('featured-grid');
+    const products = FEATURED_IDS.map(id => window.CAPY_PRODUCTS.find(p => p.id === id)).filter(Boolean);
+
+    grid.innerHTML = products.map(p => `
+      <article class="product-card" data-id="${p.id}">
+        <a href="product.html?id=${p.id}" style="text-decoration:none;color:inherit;">
+          <div class="card-img" style="background:${p.gradient}">
+            <span aria-hidden="true">${p.emoji}</span>
+            ${p.badge ? `<span class="card-badge" style="background:${p.badgeColor || '#C4623A'}">${p.badge}</span>` : ''}
+          </div>
+        </a>
+        <div class="card-body">
+          <a href="product.html?id=${p.id}" style="text-decoration:none;">
+            <h3 class="card-name">${p.name}</h3>
+          </a>
+          <p class="card-desc">${p.description}</p>
+          <div class="card-footer">
+            <span class="card-price">$${p.price.toFixed(2)}</span>
+            <button class="btn-add" data-id="${p.id}" aria-label="Add ${p.name} to cart">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
+    grid.querySelectorAll('.btn-add').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const product = window.CAPY_PRODUCTS.find(p => p.id === btn.dataset.id);
+        if (!product) return;
+        window.CapyCart.addToCart(product, null, 1);
+        btn.textContent = '✓ Added!';
+        btn.classList.add('added');
+        setTimeout(() => {
+          btn.textContent = 'Add to Cart';
+          btn.classList.remove('added');
+        }, 1800);
+      });
+    });
+  }
+
+  // ── Hamburger ─────────────────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+    const spans = hamburger.querySelectorAll('span');
+    if (open) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderFeatured);
+  } else {
+    renderFeatured();
+  }
+</script>
+</body>
+</html>
